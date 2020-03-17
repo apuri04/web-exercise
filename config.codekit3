@@ -81,6 +81,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/includes/css/scss/Mixins.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/includes/css/scss/Mixins-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/includes/css/scss/Mixins.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -169,11 +179,19 @@
 		"oAP": "/includes/kit/body.html",
 		"oF": 0
 		},
+	"/includes/kit/footer.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/includes/kit/footer.html",
+		"oF": 0
+		},
 	"/includes/kit/header.html": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/includes/kit/header.html",
 		"oF": 0
 		},
@@ -181,7 +199,7 @@
 		"cB": 0,
 		"ft": 2048,
 		"hM": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/includes/kit/header.html",
 		"oF": 0
 		},

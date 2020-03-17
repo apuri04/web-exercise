@@ -1,169 +1,200 @@
-@mixin gridMaker($numCol, $marginRight, $marginBottomPx){
-    width: (100% - (($numCol - 1) * $marginRight)) / $numCol;
-    margin-bottom: $marginBottomPx;
-    &:nth-child(n){
-        margin-right: $marginRight;
+/**-------COMMON STYLES----------**/
+
+* {
+  padding: auto;
+  margin: auto;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
-    &:nth-child(#{$numCol}n){
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+/*------STYLE FOR THE HEADER-------------*/
+
+.logo {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+nav {
+  background: #666666;
+  height: 80px;
+  width: 100%;
+}
+
+nav ul {
+  float: right;
+  margin: 30px 100px 10px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 16px;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+
+a.active,
+a:hover {
+  background: #666666;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+.banner {
+  height: 50px;
+  background: grey;
+}
+
+.banner ul {
+  list-style-type: none;
+  text-align: center;
+  border-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 100px;
+}
+
+.banner ul li {
+  padding: 10px;
+  display: inline;
+}
+
+.banner ul li a {
+  text-decoration: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  background: grey;
+}
+
+/***---STYLE FOR CONTENT PART-----***/
+
+.content-section {
+  margin: 10px 50px 0px 50px;
+}
+
+@mixin gridMaker($numCol, $marginRight, $marginBottomPx) {
+  width: (100% - (($numCol - 1) * $marginRight)) / $numCol;
+  margin-bottom: $marginBottomPx;
+  &:nth-child(n) {
+    margin-right: $marginRight;
+  }
+  &:nth-child(#{$numCol}n) {
     margin-right: 0;
+  }
 }
 
-}
-*{
-    padding: auto;
-    margin: auto;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-
+.section-heading-wrapper {
+  margin-top: 30px;
 }
 
-body{
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-.logo{
-margin-right: auto;
-}
-nav{
-    background: #666666;
-    height: 80px;
-    width: 100%;
+.section-text {
+  font-size: 14px;
 }
 
-nav ul{
-   float: right;
-   margin-right: 2  0px;
+.section-heading {
+  font-size: 24px;
 }
 
-nav ul li{
-    display: inline-block;
-    line-height: 80px;
-     margin: 0 5px;
+.parent-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  width: auto;
+  @supports (grid-area: auto) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+  }
 }
-
-nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-
-}
-
-a.active,a:hover{
-    background: #666666;
-}
-
-.banner{
-    height: 50px;
-    background : grey;
-}
-.banner ul{
-list-style-type: none;
-text-align: center;
-margin: 10px;
-border-radius: 5px;
-}
-.banner li{
-    display: inline;
-}
-.banner ul li a{
-    text-decoration: none;
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-.checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display:  none;
-}
-
-#check{
-    display: none;
-}
-
-@media (max-width: 952px){
-    nav ul li a{
-        font-size: 16 px;
-    }
-}
-
-@media (max-width: 858px){
-
-    .checkbtn{
-        display: block;
-    }
-
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top:  80px;
-        left: 0;
-        text-align: center;
-        left: -100%;
-        transition: all 0.5s;
-    }
-
-    nav ul li{
-        display:block;
-        margin: 50px 0;
-         line-height: 30px;
-    }
-
-    nav ul li a{
-        font-size: 20px;
-    }
-    a:hover,a.active{
-        background: none;
-        color: #0082e6;
-
-    }
-
-    #check:checked ~ ul{
-        left: 0;
-    }
-}
-.section-heading-wrapper{
-    margin-top: 30px;
-}
-
-.parent-wrapper{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
+.child {
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  background-color: #666666;
+  height: 150px;
+  @supports (grid-area: auto) {
+    margin: 0;
     width: auto;
-    @supports (grid-area:auto){
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 50px;
-    }
-}
-.child{
-    color:#fff;
-    text-align:center;
-    padding: 50px;
-    background-color: #666666;
-    height: 150px;
-    @supports (grid-area: auto)
-    {
-        margin: 0;
-        width: auto;
-}
-    @include gridMaker(4, 15%, 10px)
+  }
+  @include gridMaker(4, 15%, 10px);
 }
 
-.footer{
-    background: #666666;
+/*-----------media queries for the navigation bar for mobile---*/
+@media (max-width: 952px) {
+  nav ul li a {
+    font-size: 16 px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
     position: fixed;
-    height: 40px;
     width: 100%;
-    bottom: 0;
-}
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: 0;
+    text-align: center;
+    left: -100%;
+    transition: all 0.5s;
+  }
 
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+/*---------STYLE FOR THE FOOTER--------*/
+.footer {
+  background: #666666;
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  bottom: 0;
+}

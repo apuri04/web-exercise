@@ -1,3 +1,4 @@
+/**-------COMMON STYLES----------**/
 * {
   padding: auto;
   margin: auto;
@@ -8,8 +9,10 @@
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif; }
 
+/*------STYLE FOR THE HEADER-------------*/
 .logo {
-  margin-right: auto; }
+  margin-top: 10px;
+  margin-left: 50px; }
 
 nav {
   background: #666666;
@@ -18,38 +21,20 @@ nav {
 
 nav ul {
   float: right;
-  margin-right: 2  0px; }
+  margin: 30px 100px 10px; }
 
 nav ul li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px; }
+  display: inline-block; }
 
 nav ul li a {
   color: white;
-  font-size: 17px;
+  font-size: 16px;
   padding: 7px 13px;
   border-radius: 3px; }
 
-a.active, a:hover {
+a.active,
+a:hover {
   background: #666666; }
-
-.banner {
-  height: 50px;
-  background: grey; }
-
-.banner ul {
-  list-style-type: none;
-  text-align: center;
-  margin: 10px;
-  border-radius: 5px; }
-
-.banner li {
-  display: inline; }
-
-.banner ul li a {
-  text-decoration: none;
-  font-family: "Roboto", Arial, Helvetica, sans-serif; }
 
 .checkbtn {
   font-size: 30px;
@@ -63,37 +48,44 @@ a.active, a:hover {
 #check {
   display: none; }
 
-@media (max-width: 952px) {
-  nav ul li a {
-    font-size: 16 px; } }
+.banner {
+  height: 50px;
+  background: grey; }
 
-@media (max-width: 858px) {
-  .checkbtn {
-    display: block; }
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: 0;
-    text-align: center;
-    left: -100%;
-    transition: all 0.5s; }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px; }
-  nav ul li a {
-    font-size: 20px; }
-  a:hover, a.active {
-    background: none;
-    color: #0082e6; }
-  #check:checked ~ ul {
-    left: 0; } }
+.banner ul {
+  list-style-type: none;
+  text-align: center;
+  border-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 100px; }
+
+.banner ul li {
+  padding: 10px;
+  display: inline; }
+
+.banner ul li a {
+  text-decoration: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif; }
+
+.btn {
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  background: grey; }
+
+/***---STYLE FOR CONTENT PART-----***/
+.content-section {
+  margin: 10px 50px 0px 50px; }
 
 .section-heading-wrapper {
   margin-top: 30px; }
+
+.section-text {
+  font-size: 14px; }
+
+.section-heading {
+  font-size: 24px; }
 
 .parent-wrapper {
   display: -webkit-box;
@@ -126,6 +118,38 @@ a.active, a:hover {
   .child:nth-child(4n) {
     margin-right: 0; }
 
+/*-----------media queries for the navigation bar for mobile---*/
+@media (max-width: 952px) {
+  nav ul li a {
+    font-size: 16 px; } }
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block; }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: 0;
+    text-align: center;
+    left: -100%;
+    transition: all 0.5s; }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px; }
+  nav ul li a {
+    font-size: 20px; }
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6; }
+  #check:checked ~ ul {
+    left: 0; } }
+
+/*---------STYLE FOR THE FOOTER--------*/
 .footer {
   background: #666666;
   position: fixed;
