@@ -81,15 +81,18 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/includes/css/scss/Mixins.css": {
-		"aP": 1,
+	"/includes/css/scss/mediaQueries.scss": {
+		"aP": 0,
 		"bl": 0,
-		"ft": 16,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
 		"ma": 0,
-		"oA": 0,
-		"oAP": "/includes/css/scss/Mixins-min.css",
+		"oA": 1,
+		"oAP": "/includes/css/scss/mediaQueries.css",
 		"oF": 0,
-		"oS": 3
+		"oS": 0,
+		"uL": 1
 		},
 	"/includes/css/scss/Mixins.scss": {
 		"aP": 0,
@@ -98,7 +101,7 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/includes/css/scss/Mixins.css",
 		"oF": 0,
 		"oS": 0,
@@ -171,52 +174,44 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/includes/kit/body.kit": {
+	"/includes/kit/footer.html": {
 		"cB": 0,
-		"ft": 2048,
+		"ft": 8192,
 		"hM": 0,
-		"oA": 1,
-		"oAP": "/includes/kit/body.html",
+		"oA": 0,
+		"oAP": "/includes/kit/footer.html",
 		"oF": 0
 		},
 	"/includes/kit/footer.kit": {
 		"cB": 0,
 		"ft": 2048,
 		"hM": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/includes/kit/footer.html",
-		"oF": 0
-		},
-	"/includes/kit/header.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 1,
-		"oAP": "/includes/kit/header.html",
 		"oF": 0
 		},
 	"/includes/kit/header.kit": {
 		"cB": 0,
 		"ft": 2048,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/includes/kit/header.html",
 		"oF": 0
 		},
-	"/includes/kit/index.html": {
+	"/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/includes/kit/index.html",
+		"oAP": "/index.html",
 		"oF": 0
 		},
-	"/includes/kit/index.kit": {
+	"/index.kit": {
 		"cB": 0,
 		"ft": 2048,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/includes/kit/index.html",
+		"oAP": "/index.html",
 		"oF": 0
 		},
 	"/sample/.gitignore": {

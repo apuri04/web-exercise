@@ -1,10 +1,14 @@
-/**-------COMMON STYLES----------**/
-* {
+html {
   padding: auto;
   margin: auto;
-  text-decoration: none;
-  list-style: none;
   box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif; }
@@ -14,45 +18,46 @@ body {
   margin-top: 10px;
   margin-left: 50px; }
 
-nav {
+@media only screen and (max-width: 400px) {
+  .teammoto-logo {
+    text-align: center; } }
+
+.vehicle-nav-wrapper {
   background: #666666;
   height: 80px;
   width: 100%; }
 
-nav ul {
+.vnav-list {
   float: right;
   margin: 30px 100px 10px; }
+  @media only screen and (max-width: 800px) {
+    .vnav-list {
+      display: none; } }
+  @media only screen and (max-width: 400px) {
+    .vnav-list {
+      display: none; } }
 
-nav ul li {
+.vnav-item {
   display: inline-block; }
 
-nav ul li a {
+.vnav-link {
   color: white;
   font-size: 16px;
   padding: 7px 13px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  text-decoration: none; }
 
-a.active,
+.active,
 a:hover {
   background: #666666; }
-
-.checkbtn {
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none; }
-
-#check {
-  display: none; }
 
 .banner {
   height: 50px;
   background: grey; }
 
-.banner ul {
+.banner-list {
   list-style-type: none;
   text-align: center;
   border-radius: 5px;
@@ -60,13 +65,9 @@ a:hover {
   margin-top: 20px;
   margin-right: 100px; }
 
-.banner ul li {
+.banner-item {
   padding: 10px;
   display: inline; }
-
-.banner ul li a {
-  text-decoration: none;
-  font-family: "Roboto", Arial, Helvetica, sans-serif; }
 
 .btn {
   border-radius: 10px;
@@ -75,17 +76,20 @@ a:hover {
   background: grey; }
 
 /***---STYLE FOR CONTENT PART-----***/
-.content-section {
+.content-section-wrapper {
   margin: 10px 50px 0px 50px; }
+
+.path-wrapper {
+  font-size: 12px; }
 
 .section-heading-wrapper {
   margin-top: 30px; }
 
+.subheading-section {
+  font-size: 24px; }
+
 .section-text {
   font-size: 14px; }
-
-.section-heading {
-  font-size: 24px; }
 
 .parent-wrapper {
   display: -webkit-box;
@@ -98,59 +102,62 @@ a:hover {
     .parent-wrapper {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-column-gap: 10px;
+      grid-column-gap: 5rem;
       grid-row-gap: 50px; } }
+  @media only screen and (max-width: 800px) {
+    @supports (grid-area: auto) {
+      .parent-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 5rem;
+        grid-row-gap: 50px; } } }
+  @media only screen and (max-width: 400px) {
+    @supports (grid-area: auto) {
+      .parent-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 50px; } } }
+
+.sub-parent-wrapper {
+  height: 150px;
+  width: 21.25%;
+  margin-bottom: 10px; }
+  @supports (grid-area: auto) {
+    .sub-parent-wrapper {
+      width: 100%; } }
+  .sub-parent-wrapper:nth-child(n) {
+    margin-right: 5%; }
+  .sub-parent-wrapper:nth-child(4n) {
+    margin-right: 0; }
 
 .child {
-  color: #fff;
-  text-align: center;
-  padding: 50px;
   background-color: #666666;
-  height: 150px;
+  height: 130px;
   width: 13.75%;
   margin-bottom: 10px; }
   @supports (grid-area: auto) {
     .child {
-      margin: 0;
-      width: auto; } }
+      width: 100%; } }
   .child:nth-child(n) {
     margin-right: 15%; }
   .child:nth-child(4n) {
     margin-right: 0; }
 
-/*-----------media queries for the navigation bar for mobile---*/
-@media (max-width: 952px) {
-  nav ul li a {
-    font-size: 16 px; } }
-
-@media (max-width: 858px) {
-  .checkbtn {
-    display: block; }
-  ul {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: 0;
-    text-align: center;
-    left: -100%;
-    transition: all 0.5s; }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px; }
-  nav ul li a {
-    font-size: 20px; }
-  a:hover,
-  a.active {
-    background: none;
-    color: #0082e6; }
-  #check:checked ~ ul {
-    left: 0; } }
+.grid-section-text {
+  text-align: left;
+  height: 10px;
+  width: 21.25%;
+  margin-bottom: 10px; }
+  @supports (grid-area: auto) {
+    .grid-section-text {
+      width: 100%; } }
+  .grid-section-text:nth-child(n) {
+    margin-right: 5%; }
+  .grid-section-text:nth-child(4n) {
+    margin-right: 0; }
 
 /*---------STYLE FOR THE FOOTER--------*/
-.footer {
+.footer-section {
   background: #666666;
   position: fixed;
   height: 40px;

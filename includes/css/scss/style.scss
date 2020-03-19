@@ -1,11 +1,18 @@
-/**-------COMMON STYLES----------**/
+@import "mediaQueries";
+@import "mixins";
 
-* {
+html {
   padding: auto;
   margin: auto;
-  text-decoration: none;
-  list-style: none;
   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 body {
@@ -19,45 +26,49 @@ body {
   margin-left: 50px;
 }
 
-nav {
+.teammoto-logo {
+
+  @include responsive(phone) {
+    text-align: center;
+  }
+}
+
+.vehicle-nav-wrapper {
   background: #666666;
   height: 80px;
   width: 100%;
 }
 
-nav ul {
+.vnav-list {
   float: right;
   margin: 30px 100px 10px;
+
+  @include responsive(tab) {
+    display: none;
+  }
+
+  @include responsive(phone) {
+    display: none;
+  }
 }
 
-nav ul li {
+.vnav-item {
   display: inline-block;
 }
 
-nav ul li a {
+.vnav-link {
   color: white;
   font-size: 16px;
   padding: 7px 13px;
   border-radius: 3px;
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  text-decoration: none;
 }
 
-a.active,
+.active,
 a:hover {
   background: #666666;
-}
-
-.checkbtn {
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-
-#check {
-  display: none;
 }
 
 .banner {
@@ -65,7 +76,7 @@ a:hover {
   background: grey;
 }
 
-.banner ul {
+.banner-list {
   list-style-type: none;
   text-align: center;
   border-radius: 5px;
@@ -74,14 +85,9 @@ a:hover {
   margin-right: 100px;
 }
 
-.banner ul li {
+.banner-item {
   padding: 10px;
   display: inline;
-}
-
-.banner ul li a {
-  text-decoration: none;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .btn {
@@ -93,31 +99,24 @@ a:hover {
 
 /***---STYLE FOR CONTENT PART-----***/
 
-.content-section {
+.content-section-wrapper {
   margin: 10px 50px 0px 50px;
 }
 
-@mixin gridMaker($numCol, $marginRight, $marginBottomPx) {
-  width: (100% - (($numCol - 1) * $marginRight)) / $numCol;
-  margin-bottom: $marginBottomPx;
-  &:nth-child(n) {
-    margin-right: $marginRight;
-  }
-  &:nth-child(#{$numCol}n) {
-    margin-right: 0;
-  }
+.path-wrapper {
+  font-size: 12px;
 }
 
 .section-heading-wrapper {
   margin-top: 30px;
 }
 
-.section-text {
-  font-size: 14px;
+.subheading-section {
+  font-size: 24px;
 }
 
-.section-heading {
-  font-size: 24px;
+.section-text {
+  font-size: 14px;
 }
 
 .parent-wrapper {
@@ -127,71 +126,68 @@ a:hover {
   flex-wrap: wrap;
   margin-top: 30px;
   width: auto;
+
   @supports (grid-area: auto) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 10px;
+    grid-column-gap: 5rem;
     grid-row-gap: 50px;
   }
-}
-.child {
-  color: #fff;
-  text-align: center;
-  padding: 50px;
-  background-color: #666666;
-  height: 150px;
-  @supports (grid-area: auto) {
-    margin: 0;
-    width: auto;
+
+  @include responsive(tab) {
+
+    @supports (grid-area: auto) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 5rem;
+      grid-row-gap: 50px;
+    }
   }
+
+  @include responsive(phone) {
+
+    @supports (grid-area: auto) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 50px;
+    }
+  }
+}
+
+.sub-parent-wrapper {
+  height: 150px;
+
+  @supports (grid-area: auto) {
+    width: 100%;
+  }
+
+  @include gridMaker(4, 5%, 10px);
+}
+
+.child {
+  background-color: #666666;
+  height: 130px;
+
+  @supports (grid-area: auto) {
+    width: 100%;
+  }
+
   @include gridMaker(4, 15%, 10px);
 }
 
-/*-----------media queries for the navigation bar for mobile---*/
-@media (max-width: 952px) {
-  nav ul li a {
-    font-size: 16 px;
-  }
-}
+.grid-section-text {
+  text-align: left;
+  height: 10px;
 
-@media (max-width: 858px) {
-  .checkbtn {
-    display: block;
-  }
-
-  ul {
-    position: fixed;
+  @supports (grid-area: auto) {
     width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: 0;
-    text-align: center;
-    left: -100%;
-    transition: all 0.5s;
   }
 
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
-
-  nav ul li a {
-    font-size: 20px;
-  }
-  a:hover,
-  a.active {
-    background: none;
-    color: #0082e6;
-  }
-
-  #check:checked ~ ul {
-    left: 0;
-  }
+  @include gridMaker(4, 5%, 10px);
 }
+
 /*---------STYLE FOR THE FOOTER--------*/
-.footer {
+.footer-section {
   background: #666666;
   position: fixed;
   height: 40px;
