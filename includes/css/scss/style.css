@@ -18,42 +18,45 @@ body {
   margin-top: 10px;
   margin-left: 50px; }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .teammoto-logo {
     text-align: center; } }
 
 .vehicle-nav-wrapper {
   background: #666666;
   height: 80px;
+  line-height: 80px;
   width: 100%; }
 
-.vnav-list {
+.menu {
   float: right;
-  margin: 30px 100px 10px; }
+  margin: 0 30px 0 0; }
   @media only screen and (max-width: 800px) {
-    .vnav-list {
+    .menu {
       display: none; } }
-  @media only screen and (max-width: 400px) {
-    .vnav-list {
+  @media only screen and (max-width: 500px) {
+    .menu {
       display: none; } }
-
-.vnav-item {
-  display: inline-block; }
 
 .vnav-link {
   color: white;
   font-size: 16px;
-  padding: 7px 13px;
-  border-radius: 3px;
+  margin: 0 10px;
+  line-height: 80px;
   font-family: "Roboto Condensed";
   font-weight: bold;
   text-decoration: none; }
+  @media only screen and (max-width: 500px) {
+    .vnav-link {
+      display: block;
+      width: 100%;
+      margin: 0; } }
 
 .active,
 a:hover {
   background: #666666; }
 
-.banner {
+.banner-wrapper {
   height: 50px;
   background: grey; }
 
@@ -111,7 +114,7 @@ a:hover {
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 5rem;
         grid-row-gap: 50px; } } }
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 500px) {
     @supports (grid-area: auto) {
       .parent-wrapper {
         display: grid;
